@@ -4,8 +4,8 @@
     <groupId>mapr</groupId>
     <artifactId>sparkflightmllab</artifactId>
     <version>1.0</version>
-    <name>sparkflightmllab</name>
-    <description></description>
+    <name>auddye-mllab</name>
+    <description>playing with spark</description>
     <inceptionYear>2015</inceptionYear>
 
 
@@ -20,54 +20,61 @@
     </properties>
 
     <repositories>
-        <repository>
-            <id>scala-tools.org</id>
-            <name>Scala-tools Maven2 Repository</name>
-            <url>http://scala-tools.org/repo-releases</url>
-        </repository>
+        <!--   <repository>
+                  <id>scala-tools.org</id>
+                  <name>Scala-tools Maven2 Repository</name>
+                  <url>http://scala-tools.org/repo-releases</url>
+           </repository> -->
 
-        <repository>
-            <id>mapr-releases</id>
-            <url>http://repository.mapr.com/maven/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
+              <repository>
+                  <id>central mvn2</id>
+                  <name>Central Maven2 Repository</name>
+                  <url>http://central.maven.org/maven2/</url>
+              </repository>
 
-    </repositories>
+              <repository>
+                  <id>mvn artifacts</id>
+                  <name>Central Maven Artifacts Repository</name>
+                  <url>https://mvnrepository.com/artifact/</url>
+              </repository>
 
-    <dependencies>
-    
+              <repository>
+                  <id>mapr-releases</id>
+                  <url>http://repository.mapr.com/maven/</url>
+                  <snapshots>
+                      <enabled>false</enabled>
+                  </snapshots>
+                  <releases>
+                      <enabled>true</enabled>
+                  </releases>
+              </repository>
+          </repositories>
 
+          <dependencies>
+              <dependency>
+                  <groupId>org.scala-lang</groupId>
+                  <artifactId>scala-library</artifactId>
+                  <version>${scala.version}</version>
+              </dependency>
+              <dependency>
+                  <groupId>org.apache.spark</groupId>
+                  <artifactId>spark-core_2.11</artifactId>
+                  <version>2.1.0-mapr-1707-r6</version>
+                  <scope>provided</scope>
+              </dependency>
+              <dependency>
+                  <groupId>org.apache.spark</groupId>
+                  <artifactId>spark-sql_2.11</artifactId>
+                  <version>2.1.0-mapr-1707-r6</version>
+              </dependency>
 
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.11</artifactId>
-            <version>2.1.0-mapr-1707-r6</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_2.11</artifactId>
-            <version>2.1.0-mapr-1707-r6</version>
-        </dependency>
-		
-           <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-mllib_2.10</artifactId>
-            <version>1.6.1</version>
-        </dependency>
+                 <dependency>
+                  <groupId>org.apache.spark</groupId>
+                  <artifactId>spark-mllib_2.11</artifactId>
+                  <version>2.1.0-mapr-1710-r1</version>
+              </dependency>
 
-
-        <!-- Test -->
+              <!-- Test -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -77,15 +84,23 @@
         <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2_${scala.tools.version}</artifactId>
-            <version>1.13</version>
+            <version>3.3.1</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_${scala.tools.version}</artifactId>
-            <version>2.0.M6-SNAP8</version>
-            <scope>test</scope>
-        </dependency>
+              <!-- https://mvnrepository.com/artifact/org.scalaz.stream/scalaz-stream -->
+              <dependency>
+                  <groupId>org.scalaz.stream</groupId>
+                  <artifactId>scalaz-stream_2.11</artifactId>
+                  <version>0.8.6</version>
+              </dependency>
+
+              <!-- https://mvnrepository.com/artifact/org.scalatest/scalatest -->
+              <dependency>
+                  <groupId>org.scalatest</groupId>
+                  <artifactId>scalatest_2.11</artifactId>
+                  <version>3.2.0-SNAP10</version>
+                  <scope>test</scope>
+              </dependency>
 
     </dependencies>
 
@@ -112,5 +127,6 @@
                 <version>2.8</version>
             </plugin>
         </plugins>
+      <!--  <directory>/Users/catrinelpetre/meow/</directory> -->
     </build>
 </project>
